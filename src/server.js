@@ -25,7 +25,7 @@ app.use(bodyParser.json());
 app.post('/cadastrousuario', cadastrarUsuario);
 app.post('/login', realizarLogin)
 
-app.get('/usuario', autenticacaoMiddleware, buscarUsuario);
+app.get('/buscarusuario', autenticacaoMiddleware, buscarUsuario);
 
 // Iniciando o servidor
 app.listen(PORT, () => {
