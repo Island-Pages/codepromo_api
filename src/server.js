@@ -1,11 +1,13 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
+const { cadastrarUsuario } = require('./controllers/usuarioController');
 require('dotenv').config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Configurando o Mongoose
+// Configuração do mongoose
 mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true });
 
 // Verifica se a conexão foi concluída com sucesso
@@ -14,12 +16,12 @@ mongoose.connection.on('connected', () => {
 });
 
 mongoose.connection.on('error', (error) => {
-  console.error('erroro na conexão com o banco:', error);
+  console.error('erro na conexão com o banco:', error);
 });
 
-app.get('/', (req, res) => {
-  res.json({ message: 'HELLO WORLD' });
-});
+app.use(bodyParser.json());
+
+app.post('/usuarios', cadastrarUsuario);
 
 // Iniciando o servidor
 app.listen(PORT, () => {
