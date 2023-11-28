@@ -1,7 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-const { cadastrarUsuario } = require('./controllers/usuarioController');
+const { cadastrarUsuario, realizarLogin } = require('./controllers/usuarioController');
 require('dotenv').config();
 
 const app = express();
@@ -22,6 +22,7 @@ mongoose.connection.on('error', (error) => {
 app.use(bodyParser.json());
 
 app.post('/usuarios', cadastrarUsuario);
+app.post('/login', realizarLogin)
 
 // Iniciando o servidor
 app.listen(PORT, () => {
