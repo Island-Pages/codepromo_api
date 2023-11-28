@@ -32,7 +32,7 @@ const cadastrarUsuario = async (req, res) => {
     await novoUsuario.save();
 
     // Retornando os dados desejados no JSON de resposta
-    res.json({
+    res.status(200).json({
       usuario: {
         id: novoUsuario.id,
         data_criacao: novoUsuario.data_criacao,
@@ -73,7 +73,7 @@ const realizarLogin = async (req, res) => {
     const token = usuario.generateAuthToken();
 
     // Retornar os dados desejados no JSON de resposta
-    res.json({
+    res.status(200).json({
       usuario: {
         id: usuario.id,
         data_criacao: usuario.data_criacao,
@@ -102,7 +102,7 @@ const buscarUsuario = async (req, res) => {
     }
 
     // Retorne os detalhes do usuário
-    res.json({
+    res.status(200).json({
       id: usuarioEncontrado._id,
       nome: usuarioEncontrado.nome,
       email: usuarioEncontrado.email,
