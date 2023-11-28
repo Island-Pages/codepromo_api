@@ -1,6 +1,7 @@
 const Usuario = require('../models/usuarioModel');
 const bcrypt = require('bcrypt');
 
+// 1. Cadastro do usuário
 const cadastrarUsuario = async (req, res) => {
   try {
     const { nome, email, senha, telefones } = req.body;
@@ -45,7 +46,7 @@ const cadastrarUsuario = async (req, res) => {
   }
 };
 
-// Login usuário
+// 2. Login do usuário
 const realizarLogin = async (req, res) => {
   try {
     const { email, senha } = req.body;
@@ -86,7 +87,34 @@ const realizarLogin = async (req, res) => {
   }
 };
 
+// 3. Busca do usuário
+const buscarUsuario = async (req, res) => {
+  try {
+    // O usuário autenticado está disponível no objeto de solicitação após passar pelo middleware de autenticação
+    const usuarioAutenticado = req.usuario;
+    
+    // Realize a lógica necessária para buscar o usuário
+    const usuarioEncontrado = await Usuario.findOne({ id: usuarioAutenticado.id });
+
+    if (!usuarioEncontrado) {
+      console.log(usuarioAutenticado)
+      return res.status(404).json({ mensagem: 'Usuário não encontrado' });
+    }
+
+    // Retorne os detalhes do usuário
+    res.json({
+      id: usuarioEncontrado._id,
+      nome: usuarioEncontrado.nome,
+      email: usuarioEncontrado.email,
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ mensagem: 'Erro ao buscar usuário' });
+  }
+};
+
 module.exports = {
   cadastrarUsuario,
   realizarLogin,
+  buscarUsuario,
 };

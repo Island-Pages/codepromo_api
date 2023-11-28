@@ -1,7 +1,8 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-const { cadastrarUsuario, realizarLogin } = require('./controllers/usuarioController');
+const { cadastrarUsuario, realizarLogin, buscarUsuario } = require('./controllers/usuarioController');
+const autenticacaoMiddleware = require('./middlewares/autenticacaoMiddleware');
 require('dotenv').config();
 
 const app = express();
@@ -23,6 +24,8 @@ app.use(bodyParser.json());
 
 app.post('/usuarios', cadastrarUsuario);
 app.post('/login', realizarLogin)
+
+app.get('/usuario', autenticacaoMiddleware, buscarUsuario);
 
 // Iniciando o servidor
 app.listen(PORT, () => {
