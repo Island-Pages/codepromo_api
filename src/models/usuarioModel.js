@@ -22,7 +22,7 @@ const usuarioSchema = new mongoose.Schema({
 usuarioSchema.methods.generateAuthToken = function () {
   try {
     const token = jwt.sign({ id: this.id }, process.env.JWT_SECRET, {
-      expiresIn: '1m',
+      expiresIn: '30m',
     });
     this.token = token;
     return token;

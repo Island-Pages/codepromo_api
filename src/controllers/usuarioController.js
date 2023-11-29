@@ -54,14 +54,10 @@ const realizarLogin = async (req, res) => {
     // Encontrar o usuário pelo e-mail
     const usuario = await Usuario.findOne({ email });
 
-    if (!usuario) {
-      return res.status(401).json({ mensagem: 'Usuário e/ou senha inválidos' });
-    }
-
     // Verificar a senha
     const senhaCorreta = await bcrypt.compare(senha, usuario.senha);
 
-    if (!senhaCorreta) {
+    if (!usuario || !senhaCorreta) {
       return res.status(401).json({ mensagem: 'Usuário e/ou senha inválidos' });
     }
 
