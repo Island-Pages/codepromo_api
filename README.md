@@ -102,6 +102,8 @@ autenticação (sign in) e recuperação de informações do usuário.
 
 Deploy realizado no [Render](https://render.com/) e também na [Railway](https://railway.app/), com a finalidade de evitar adversidades.
 
+Em meus testes o Railway se mostrou mais estável, dê preferência a ele.
+
 API rodando na URL: https://crud-estribo.onrender.com/ e também na https://crudescribo.up.railway.app/
 
 Exemplo de utilização: https://crud-estribo.onrender.com/usuario/cadastro ou https://crudescribo.up.railway.app/usuario/cadastro
