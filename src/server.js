@@ -2,8 +2,8 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const usuarioRoutes = require('./routes/usuarioRoutes'); 
-
 require('dotenv').config();
+
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -20,7 +20,6 @@ mongoose.connection.on('error', (error) => {
 
 app.use(bodyParser.json());
 
-// Use as rotas definidas no arquivo usuarioRoutes.js
 app.use('/usuario', usuarioRoutes);
 
 app.listen(PORT, () => {
