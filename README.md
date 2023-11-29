@@ -1,7 +1,7 @@
 
 #  Desafio Técnico Backend 2
 
-Esse é um projeto de criação de uma API RESTfull, utilizando as tecnologias principais o Node.js, Express.js, MongoDB, Mongoose,JWT, Jest, Gulp e JsHint, hospedado no Render.com.
+Esse é um projeto de criação de uma API RESTfull, utilizando as tecnologias principais o Node.js, Express.js, MongoDB, Mongoose,JWT, Jest, Gulp e JsHint, hospedado no Render.com e no Railway.app.
 
 ## ⚙ Proposta
 
