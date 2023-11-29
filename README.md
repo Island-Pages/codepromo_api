@@ -78,7 +78,7 @@ autenticação (sign in) e recuperação de informações do usuário.
 
 ## 🐛 Importando e testando API
 
-### Importando a API, que está disponivel no [Drive](https://drive.google.com/drive/folders/).
+### Importando a API, que está disponivel no [Drive](https://drive.google.com/drive/folders/1FLv0MGlkyu1PcFFSJzuwMbBWqXNcA3Nc?usp=sharing).
 
 ![Importando testes para o Insomnia](readme_assets/importando_teste.gif)
 
