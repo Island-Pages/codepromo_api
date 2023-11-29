@@ -8,7 +8,7 @@ require('dotenv').config();
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-mongoose.connect(process.env.MONGODB_URI, { ssl: false });
+mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true });
 
 mongoose.connection.on('connected', () => {
   console.log('Conexão com o MongoDB deu certo');
