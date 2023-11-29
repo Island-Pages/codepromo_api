@@ -100,13 +100,13 @@ autenticação (sign in) e recuperação de informações do usuário.
 
 ## 📦 Deploy
 
-Deploy realizado no [Render](https://render.com/).
+Deploy realizado no [Render](https://render.com/) e também na [Railway](https://railway.app/), com a finalidade de evitar adversidades.
 
-API rodando na URL: https://crud-estribo.onrender.com/
+API rodando na URL: https://crud-estribo.onrender.com/ e também na https://crudescribo.up.railway.app/
 
-Exemplo de utilização: https://crud-estribo.onrender.com/usuario/cadastro 
+Exemplo de utilização: https://crud-estribo.onrender.com/usuario/cadastro ou https://crudescribo.up.railway.app/usuario/cadastro
 
-O cabeçalho (header) e o corpo (body) da requisição devem ser fornecidos para realizar a solicitação. As solicitações podem ser testadas por meio de um framework para desenvolvimento/teste de API Clients. O Postman e o Insomnia são dois ótimos exemplos. Para este caso, utilizei o Insomnia. O arquivo de importação no insomnia para realizar os testes está no [Drive](https://drive.google.com/drive/folders/1FLv0MGlkyu1PcFFSJzuwMbBWqXNcA3Nc?usp=sharing).
+O cabeçalho (header) e o corpo (body) da requisição devem ser fornecidos para realizar a solicitação. As solicitações podem ser testadas por meio de um framework para desenvolvimento/teste de API Clients. O Postman e o Insomnia são dois ótimos exemplos. Para este caso, utilizei o Insomnia. O arquivo de importação no insomnia para realizar os testes está no [Drive](https://drive.google.com/drive/folders/1FLv0MGlkyu1PcFFSJzuwMbBWqXNcA3Nc?usp=sharing) tanto para a URL do Railway quanto Render.
 
 ## Licença
 
