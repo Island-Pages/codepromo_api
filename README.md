@@ -30,7 +30,7 @@ autenticação (sign in) e recuperação de informações do usuário.
 
 #### ✅ SUCESSO ✅ - Retorna os dados do  usuário cadastrado (id, data da criação, data de atualização, ultimo login e um token).
 
-#### ❌ ERRO ❌ - Caso tenha um e-mail já cadastrado igual ao que o usuário informou no cadastro, a menasgem a seguir é exibida: { mensagem: 'E-mail já existente.' }
+#### ❌ ERRO ❌ - Caso tenha um e-mail já cadastrado igual ao que o usuário informou no cadastro, a mensagem a seguir é exibida: { mensagem: 'E-mail já existente.' }
 
 ### - Login de usuário -
 
@@ -50,7 +50,7 @@ autenticação (sign in) e recuperação de informações do usuário.
 
 #### ✅ SUCESSO ✅ - Retorna os dados do  usuário cadastrado (id, data da criação, data de atualização, ultimo login e um token).
 
-#### ❌ ERRO ❌ - Caso tenha um e-mail já cadastrado igual ao que o usuário informou no cadastro, a menasgem a seguir é exibida: { mensagem: 'E-mail já existente.' }
+#### ❌ ERRO ❌ - Caso a senha e/ou e-mail fornecidos sejam incorreto, a mensagem a seguir é exibida: { mensagem: 'Usuário e/ou senha inválidos' }
 
 ### - Busca de usuário -
 
