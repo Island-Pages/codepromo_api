@@ -1,12 +1,12 @@
 
-#  🚧 Desafio Técnico Backend 2
+#  🚧 API CODEPROMO 
 
-Esse é um projeto de criação de uma API RESTfull, utilizando as tecnologias principais o Node.js, Express.js, MongoDB, Mongoose,JWT, Jest, Gulp e JsHint, hospedado no Render.com e no Railway.app.
+Esse é um projeto de criação de uma API RESTfull, utilizando as tecnologias principais o Node.js, Express.js, MongoDB, Mongoose,JWT, Jest, Gulp e JsHint, hospedado no Railway.app.
 
 ## ⚙ Proposta
 
 Desenvolver uma API RESTful para autenticação de usuários, que permita operações de cadastro (sign up),
-autenticação (sign in) e recuperação de informações do usuário.
+autenticação (sign in), recuperação de informações do usuário, cadastro de cupons, validação de cupons e deletar cupons.
 
 ## 💻 Documentação da API
 
