@@ -4,7 +4,7 @@ const bcrypt = require('bcrypt');
 // 1. Cadastro do usuário
 const cadastrarUsuario = async (req, res) => {
   try {
-    const { nome, email, senha, telefones } = req.body;
+    const { nome, email, senha, telefone } = req.body;
 
     // Verificar se o e-mail já existe no banco de dados
     // Se sim, retornar erro de já existente
@@ -22,7 +22,7 @@ const cadastrarUsuario = async (req, res) => {
       nome,
       email,
       senha: hashedPassword, // Salvar a senha criptografada
-      telefones,
+      telefone,
     });
 
     // Gerando um token e atribuindo ao usuário

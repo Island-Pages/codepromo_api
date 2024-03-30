@@ -7,12 +7,7 @@ const usuarioSchema = new mongoose.Schema({
   nome: { type: String, required: true },
   email: { type: String, required: true, unique: true },
   senha: { type: String, required: true },
-  telefones: [
-    {
-      numero: { type: String, required: true },
-      ddd: { type: String, required: true },
-    },
-  ],
+  telefone: { type: String, required: true},
   data_criacao: { type: Date, default: Date.now },
   data_atualizacao: { type: Date, default: Date.now },
   ultimo_login: { type: Date, default: null },
@@ -22,7 +17,7 @@ const usuarioSchema = new mongoose.Schema({
 usuarioSchema.methods.generateAuthToken = function () {
   try {
     const token = jwt.sign({ id: this.id }, process.env.JWT_SECRET, {
-      expiresIn: '30m',
+      expiresIn: '1h',
     });
     this.token = token;
     return token;

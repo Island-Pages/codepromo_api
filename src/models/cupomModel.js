@@ -29,6 +29,11 @@ const cupomSchema = new mongoose.Schema({
   validado: {
     type: Boolean,
     default: false
+  },
+  tempoDuracao: {
+    type: Date,
+    default: null,
+    required: false
   }
 });
 
