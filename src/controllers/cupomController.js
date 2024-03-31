@@ -28,7 +28,7 @@ async function createCupom(req, res) {
             formaPagamento,
             qrCode,
             codigo,
-            tempoDuracao 
+            tempoDuracao
         };
 
         const cupom = new Cupom(cupomData);
@@ -62,8 +62,13 @@ async function dadosCupom(req, res) {
             return res.status(400).json({ message: 'Este cupom já foi validado' });
         }
 
-        if (cupom.tempoDuracao && new Date(cupom.tempoDuracao) < new Date()) {
-            return res.status(400).json({ message: 'Este cupom expirou' });
+        if (cupom.tempoDuracao) {
+            const expirationDate = new Date(cupom.tempoDuracao);
+            const currentDate = new Date();
+            const currentUTCDate = new Date(Date.UTC(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate()));
+            if (currentUTCDate > expirationDate) {
+                return res.status(400).json({ message: 'Este cupom expirou' });
+            }
         }
 
         res.json(cupom);
