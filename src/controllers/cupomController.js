@@ -108,7 +108,7 @@ async function validarCupomById(req, res) {
 async function pegarCuponsValidos(req, res) {
     try {
         const cupons = await Cupom.find({ validado: true })
-                                  .sort({ createdAt: -1 })
+                                  .sort({ createdAt: 1 })
                                   .limit(10);
 
         res.status(200).json(cupons);

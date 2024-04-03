@@ -10,12 +10,12 @@ const cupomSchema = new mongoose.Schema({
     required: true
   },
   valor: {
-    type: Number,
+    type: String,
     required: true
   },
   formaPagamento: {
     type: String,
-    enum: ['reais', 'porcentagem'],
+    enum: ['reais', 'porcentagem', 'cupomEspecial'],
     default: 'reais'
   },
   qrCode: {
@@ -34,6 +34,10 @@ const cupomSchema = new mongoose.Schema({
     type: Date,
     default: null,
     required: false
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now // Adiciona a data de criação
   }
 });
 
